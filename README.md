@@ -337,7 +337,7 @@ php { }
 php > } 
 php > $obj = new Secret("admin", "ABCDDAZAZUIDUBIUAFZ123456789"); 
 php > $ser = serialize($obj); 
-O:6:"Secret":2:{s:8:"username";s:5:"admin";s:5:"token";b:1;} php >
+O:6:"Secret":2{s:8:"username";s:5:"admin";s:5:"token";s:28:"ABCDDAZAZUIDUBIUAFZ123456789";}
 php > echo base64_encode($ser);
 Tzo2OiJTZWNyZXQiOjI6e3M6ODoidXNlcm5hbWUiO3M6NToiYWRtaW4iO3M6NToidG9rZW4iO3M6Mjg6IkFCQ0REQVpBWlVJRFVCSVVBRloxMjM0NTY3ODkiO30=
 php >
