@@ -1,4 +1,5 @@
 # Writeups Web Quals/25 - Securinets-ISI
+**You can find all tasks files up above in the same reo**
 
 ## I. Ricky
 Acceding the first page we can see that we can upload any file to the server but we get redirected to a Rick and Morty video.
