@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  web:
+    build: .
+    ports:
+      - "1022:80"
+    volumes:
+      - .:/var/www/html
+    networks:
+      - ctf_network
+
+networks:
+  ctf_network:
+    driver: bridge
+

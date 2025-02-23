@@ -1,0 +1,117 @@
+Securinets login: admin
+Password: 
+Last login: Feb 20, 2025, 12:21:29 from 192.168.1.10
+Welcome to Ubuntu 20.04.2 LTS (GNU/Linux 5.4.0-42-generic x86_64)
+
+  System information as of Feb 20, 2025, 12:21:29
+
+  System load:  0.08              Processes:             123
+  Usage of /:   33% of 98.30GB   Users logged in:       1
+  Memory usage: 24%               IPv4 address for eth0: 10.0.2.15
+  Swap usage:   0%
+
+admin@Securinets:~$ sudo tail -n 100 /var/log/application.log
+[sudo] password for admin: 
+
+2025-02-16T03:30:07.893Z Securinets AuthController [DEBUG]: Operation failed for user 80
+2025-02-15T13:16:23.940Z Securinets PaymentGateway [INFO]: Operation completed for user 224
+2025-02-16T11:30:07.877Z Securinets UserService [ERROR]: Operation started for user 671
+2025-02-16T07:17:44.751Z Securinets DatabaseConnector [DEBUG]: Operation failed for user 984
+2025-02-16T04:24:48.619Z Securinets AuthController [INFO]: Operation failed for user 416
+2025-02-16T08:48:34.916Z Securinets AuthController [WARN]: Operation started for user 431
+2025-02-18T12:54:00.587Z Securinets AuthController [DEBUG]: Operation pending for user 642
+2025-02-15T23:25:59.433Z Securinets DatabaseConnector [ERROR]: Operation started for user 362
+2025-02-16T22:54:15.755Z Securinets PaymentGateway [DEBUG]: Operation started for user 994
+2025-02-20T11:08:01.427Z Securinets PaymentGateway [DEBUG]: Operation started for user 430
+2025-02-14T05:49:51.486Z Securinets UserService [DEBUG]: Operation started for user 9
+2025-02-17T06:15:09.905Z Securinets UserService [WARN]: Operation failed for user 426
+2025-02-20T07:46:08.567Z Securinets AuthController [DEBUG]: Operation started for user 263
+2025-02-19T05:20:35.659Z Securinets UserService [WARN]: Operation failed for user 612
+2025-02-19T09:39:42.960Z Securinets UserService [ERROR]: Operation started for user 484
+2025-02-19T03:08:00.529Z Securinets DatabaseConnector [INFO]: Operation pending for user 914
+2025-02-20T01:17:48.963Z Securinets DatabaseConnector [ERROR]: Operation completed for user 956
+2025-02-16T10:01:52.388Z Securinets UserService [DEBUG]: Operation failed for user 662
+2025-02-18T03:08:09.302Z Securinets UserService [ERROR]: Operation completed for user 7
+2025-02-15T00:41:56.118Z Securinets AuthController [INFO]: Operation failed for user 961
+2025-02-14T09:04:16.604Z Securinets DatabaseConnector [INFO]: Operation failed for user 567
+2025-02-16T13:29:28.078Z Securinets DatabaseConnector [WARN]: Operation pending for user 411
+2025-02-13T14:03:07.934Z Securinets PaymentGateway [DEBUG]: Operation started for user 252
+2025-02-15T17:34:44.573Z Securinets AuthController [WARN]: Operation completed for user 496
+2025-02-16T13:47:58.850Z Securinets AuthController [DEBUG]: Operation pending for user 759
+2025-02-15T04:59:58.053Z Securinets PaymentGateway [WARN]: Operation completed for user 857
+2025-02-18T09:45:43.432Z Securinets UserService [WARN]: Operation completed for user 48
+2025-02-13T20:43:45.669Z Securinets AuthController [DEBUG]: Operation failed for user 831
+2025-02-15T13:27:36.739Z Securinets PaymentGateway [WARN]: Operation started for user 826
+2025-02-15T04:38:55.919Z Securinets DatabaseConnector [INFO]: Operation completed for user 605
+2025-02-16T21:58:08.818Z Securinets DatabaseConnector [DEBUG]: Operation completed for user 663
+2025-02-17T12:29:50.074Z Securinets UserService [WARN]: Operation completed for user 137
+2025-02-16T20:58:05.907Z Securinets UserService [DEBUG]: Operation completed for user 757
+2025-02-18T06:44:17.179Z Securinets UserService [WARN]: Operation failed for user 185
+2025-02-14T02:53:14.455Z Securinets AuthController [INFO]: Operation started for user 226
+2025-02-14T00:31:22.821Z Securinets DatabaseConnector [ERROR]: Operation started for user 171
+2025-02-16T23:20:50.358Z Securinets UserService [DEBUG]: Operation failed for user 914
+2025-02-15T08:39:26.387Z Securinets AuthController [INFO]: Operation pending for user 398
+2025-02-17T06:11:08.525Z Securinets UserService [WARN]: Operation failed for user 663
+2025-02-17T13:29:03.000Z Securinets DatabaseConnector [WARN]: Operation completed for user 353
+2025-02-15T16:55:57.572Z Securinets PaymentGateway [DEBUG]: Operation completed for user 610
+2025-02-15T23:25:14.790Z Securinets DatabaseConnector [WARN]: Operation pending for user 140
+2025-02-14T06:09:53.001Z Securinets UserService [DEBUG]: Operation pending for user 559
+2025-02-13T19:55:51.865Z Securinets DatabaseConnector [WARN]: Operation completed for user 578
+2025-02-18T04:00:02.915Z Securinets AuthController [WARN]: Operation completed for user 166
+2025-02-15T16:06:38.703Z Securinets PaymentGateway [DEBUG]: Operation started for user 618
+2025-02-19T00:04:01.626Z Securinets UserService [DEBUG]: Operation completed for user 590
+2025-02-14T01:25:32.553Z Securinets PaymentGateway [INFO]: Operation failed for user 866
+2025-02-18T23:30:50.599Z Securinets DatabaseConnector [WARN]: Operation pending for user 964
+2025-02-14T20:09:15.048Z Securinets AuthController [INFO]: Operation failed for user 459
+2025-02-15T19:36:28.337Z Securinets DatabaseConnector [ERROR]: Operation completed for user 398
+2025-02-19T12:46:22.596Z Securinets UserService [INFO]: Operation completed for user 198
+2025-02-16T14:46:50.147Z Securinets AuthController [INFO]: Operation failed for user 849
+2025-02-19T19:06:01.943Z Securinets UserService [INFO]: Operation completed for user 605
+2025-02-20T06:09:49.114Z Securinets UserService [INFO]: Operation completed for user 259
+2025-02-18T06:10:21.320Z Securinets AuthController [WARN]: Operation failed for user 606
+2025-02-15T19:24:06.475Z Securinets AuthController [WARN]: Operation started for user 578
+2025-02-19T11:38:54.962Z Securinets UserService [INFO]: Operation failed for user 732
+2025-02-13T13:48:32.326Z Securinets DatabaseConnector [DEBUG]: Operation pending for user 236
+2025-02-18T02:35:30.263Z Securinets DatabaseConnector [INFO]: Operation completed for user 101
+2025-02-16T18:53:13.221Z Securinets UserService [INFO]: Operation started for user 30
+2025-02-14T08:28:51.228Z Securinets DatabaseConnector [DEBUG]: Operation completed for user 640
+2025-02-17T10:37:35.483Z Securinets UserService [ERROR]: Operation started for user 686
+2025-02-19T18:20:02.365Z Securinets UserService [DEBUG]: Operation pending for user 34
+2025-02-18T17:50:33.597Z Securinets UserService [WARN]: Operation completed for user 550
+2025-02-15T06:28:54.492Z Securinets AuthController [WARN]: Operation started for user 34
+2025-02-18T14:55:13.060Z Securinets PaymentGateway [WARN]: Operation completed for user 28
+2025-02-14T22:22:43.526Z Securinets AuthController [DEBUG]: Operation failed for user 979
+2025-02-18T00:29:27.419Z Securinets PaymentGateway [INFO]: Operation completed for user 345
+2025-02-18T20:32:00.668Z Securinets UserService [DEBUG]: Operation failed for user 636
+2025-02-14T20:00:26.048Z Securinets PaymentGateway [INFO]: Operation started for user 548
+2025-02-18T15:16:27.575Z Securinets PaymentGateway [DEBUG]: Operation started for user 361
+2025-02-18T09:16:37.524Z Securinets PaymentGateway [ERROR]: Operation failed for user 881
+2025-02-17T20:17:14.440Z Securinets DatabaseConnector [WARN]: Operation pending for user 925
+2025-02-15T22:58:46.368Z Securinets PaymentGateway [ERROR]: Operation pending for user 542
+2025-02-20T11:15:50.628Z Securinets AuthController [INFO]: Operation completed for user 788
+2025-02-18T02:59:14.788Z Securinets DatabaseConnector [DEBUG]: Operation pending for user 992
+2025-02-19T04:39:24.769Z Securinets PaymentGateway [ERROR]: Operation completed for user 790
+2025-02-15T21:03:10.148Z Securinets AuthController [ERROR]: Operation started for user 337
+2025-02-14T06:24:50.546Z Securinets UserService [INFO]: Operation failed for user 816
+2025-02-14T04:43:31.247Z Securinets AuthController [WARN]: Operation started for user 566
+2025-02-17T17:19:19.119Z Securinets DatabaseConnector [DEBUG]: Operation completed for user 957
+2025-02-16T17:26:00.742Z Securinets PaymentGateway [INFO]: Operation pending for user 185
+2025-02-18T11:50:40.459Z Securinets DatabaseConnector [ERROR]: Operation completed for user 785
+2025-02-20T08:20:25.613Z Securinets DatabaseConnector [DEBUG]: Operation started for user 19
+2025-02-19T07:06:14.788Z Securinets PaymentGateway [DEBUG]: Operation pending for user 608
+2025-02-19T21:54:49.389Z Securinets DatabaseConnector [WARN]: Operation pending for user 31
+2025-02-16T18:36:21.348Z Securinets AuthController [DEBUG]: Operation started for user 582
+2025-02-13T15:55:01.948Z Securinets AuthController [ERROR]: Operation completed for user 266
+2025-02-13T23:46:44.471Z Securinets DatabaseConnector [DEBUG]: Operation started for user 588
+2025-02-13T18:06:54.961Z Securinets DatabaseConnector [INFO]: Operation pending for user 538
+2025-02-15T15:46:41.071Z Securinets UserService [ERROR]: Operation failed for user 824
+2025-02-17T04:39:03.812Z Securinets DatabaseConnector [ERROR]: Operation completed for user 937
+2025-02-19T05:18:42.893Z Securinets AuthController [ERROR]: Operation pending for user 732
+2025-02-14T15:38:53.277Z Securinets UserService [DEBUG]: Operation started for user 478
+2025-02-16T20:24:47.013Z Securinets UserService [INFO]: Operation completed for user 305
+2025-02-17T02:28:21.144Z Securinets AuthController [DEBUG]: Operation started for user 500
+2025-02-17T01:34:55.591Z Securinets DatabaseConnector [WARN]: Operation failed for user 393
+2025-02-16T22:29:18.920Z Securinets UserService [WARN]: Operation pending for user 690
+2025-02-17T09:04:54.134Z Securinets AuthController [INFO]: Operation started for user 985
+admin@Securinets:~$ curl localhost:8080/internal/api.php
+curl: (7) Failed to connect to localhost port 8080 after 0 ms: Could not connect to server

@@ -1,0 +1,24 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "1020:80"
+    volumes:
+      - ./src/uploads:/var/www/html/uploads
+    environment:
+      - APACHE_RUN_USER=www-data
+      - APACHE_RUN_GROUP=www-data
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password_ndlx0!
+      MYSQL_DATABASE: newshub
+      MYSQL_USER: ctf_user_ndlx0!
+      MYSQL_PASSWORD: ctf_password_ndlx0!
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "3308:3306"

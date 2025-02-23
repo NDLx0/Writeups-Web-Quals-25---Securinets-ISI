@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pirate's Pickle Banquet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+  <style>
+    /* Basic Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #000;
+      color: rgb(255, 255, 255);
+      font-family: 'Courier New', Courier, monospace;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Canvas with a repeating futuristic pirate ASCII pattern */
+    #bgCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.5em;
+      color: #ff5500;
+      text-shadow: 2px 2px 10px #ff5500;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 1em;
+    }
+
+    .upload-box {
+      background: rgba(0, 0, 0, 0.8);
+      border: 2px solid #ff5500;
+      border-radius: 10px;
+      padding: 20px;
+      display: inline-block;
+    }
+
+    input[type="file"] {
+      background: #111;
+      border: none;
+      padding: 10px;
+      color: rgb(255, 255, 255);
+      margin-bottom: 10px;
+    }
+
+    input[type="submit"],
+    button {
+      background: #ff5500;
+      border: none;
+      padding: 10px 20px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 1em;
+      border-radius: 5px;
+      transition: background 0.3s;
+      margin: 10px;
+    }
+
+    input[type="submit"]:hover,
+    button:hover {
+      background: #ff3300;
+    }
+
+    pre#bombAnimation {
+      margin-top: 20px;
+      font-size: 16px;
+      line-height: 1.2em;
+      text-align: left;
+      white-space: pre;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="bgCanvas"></canvas>
+  <div class="container">
+    <h1>Pirate's Pickle Banquet</h1>
+    <p>For our pirates to secure grand wins in battle, they feast on pickle – though beware, some pickle can be poisonous!</p>
+    <div class="upload-box">
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required><br>
+        <input type="submit" value="Feast!">
+      </form>
+    </div>
+    <br>
+    <!-- Button triggers the bomb animation then redirects to the gallery -->
+    <button onclick="startBombAnimation()">Set Sail to Battles Gallery</button>
+    <pre id="bombAnimation"></pre>
+  </div>
+  <script>
+    // Futuristic pirate ASCII background animation on canvas
+    const canvas = document.getElementById('bgCanvas');
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+    
+    // Repeating pirate-themed text string
+    const text = "⚓ PIRATE ⚓ ";
+    const fontSize = 20;
+    const columns = Math.floor(width / fontSize);
+    const drops = Array(columns).fill(0);
+    
+    function draw() {
+      ctx.fillStyle = "rgba(0, 0, 50, 0.1)";
+      ctx.fillRect(0, 0, width, height);
+      ctx.fillStyle = "#00fff";
+      ctx.font = fontSize + "px monospace";
+      
+      for (let i = 0; i < columns; i++) {
+        const char = text[Math.floor(Math.random() * text.length)];
+        ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+    
+    setInterval(draw, 175);
+    
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+    
+    // Larger, faster ASCII Bomb Animation Frames (bigger pirate ship)
+    const bombFrames = [
+`                  
+                  |    |    |
+                 )_)  )_)  )_)
+                )___))___))___)\\
+               )____)____)_____)\\\\
+         ______|____|____|____|___\\\\__
+---------\\                   /---------
+  ^^^^^ ^^^^^^^^^^^^^^^^^^^^^
+    ^^^^      ^^^^     ^^^    ^^`,
+`                  
+                         O
+                  |    |    |
+                 )_)  )_)  )_)
+                )___))___))___)\\
+               )____)____)_____)\\\\
+         ______|____|____|____|___\\\\__
+---------\\                   /---------
+  ^^^^^ ^^^^^^^^^^^^^^^^^^^^^
+    ^^^^      ^^^^     ^^^    ^^`,
+`                  
+                  |    |    |
+                 )_)  )_)  )_)
+                )___))___))___)\\
+               )____)____)_____)\\\\
+         ______|____|____|____|___\\\\__
+---------\\          O        /---------
+  ^^^^^ ^^^^^^^^^^^^^^^^^^^^^
+    ^^^^      ^^^^     ^^^    ^^`,
+`                  
+                  |    |    |
+                 )_)  )_)  )_)
+                )___))___))___)\\
+               )____)____)_____)\\\\
+         ______|____|____|____|___\\\\__
+---------\\       BOOM!!!       /---------
+  ^^^^^ ^^^^^^^^^^^^^^^^^^^^^
+    ^^^^      ^^^^     ^^^    ^^`
+    ];
+    
+    function startBombAnimation() {
+      const pre = document.getElementById('bombAnimation');
+      let frame = 0;
+      pre.textContent = bombFrames[frame];
+      const interval = setInterval(() => {
+        frame++;
+        if (frame >= bombFrames.length) {
+          clearInterval(interval);
+          window.location.href = "/gallery";
+        } else {
+          pre.textContent = bombFrames[frame];
+        }
+      }, 250); // Fast animation: 250ms per frame
+    }
+  </script>
+</body>
+</html>
