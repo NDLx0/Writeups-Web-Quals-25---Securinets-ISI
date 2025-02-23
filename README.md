@@ -83,7 +83,7 @@ After reading the source code we can find that
 - the command we supply in is being executed but there's a blacklist of the multiple commands.
 - In `/gallery` route there's a LFI and a blacklist for reading the flag directly, or that was the intended path in the challenge to read only ``app.py`` with 
 ``curl http://98.66.180.82:1024/gallery?file=../app/app.py``
-- until my teammate ``EL_GASTRA`` noticed that we can simply bypass the flag check by using
+- until my teammate `[EL_GASTRA](https://github.com/ghassen202)`` noticed that we can simply bypass the flag check by using
 ``curl http://98.66.180.82:1024/gallery?file=/app//flag.txt``
 ![[Pasted image 20250223173359.png]]
 
