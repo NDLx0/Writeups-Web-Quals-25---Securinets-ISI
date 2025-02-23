@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/e503c4ce-8abe-42a0-9051-5b3e232bf1d2)# Writeups Web Quals/25 - Securinets-ISI
+# Writeups Web Quals/25 - Securinets-ISI
 
 ## I. Ricky
 Acceding the first page we can see that we can upload any file to the server but we get redirected to a Rick and Morty video.
@@ -116,7 +116,8 @@ And we can get the flag.txt which is
 **Securinets{G00d_Ch4in_m00rtYYY!}**
 
 > Poc
-![[Pasted image 20250223221256.png]]
+
+![](Images/Pasted%20image%2020250223173359.png)
 ## II. PHP Jail
 The next challenge is a php jail;
 ```php
@@ -188,7 +189,7 @@ parse={if:3<4)('s'.'ystem')('cat *.txt');//}ndl{end if}
 
 Final request:
 >Poc
-![[Pasted image 20250223215518.png]]
+![](Pasted%20image%2020250223215518.png)
 ## III. Chained Together
 This challenge comes with a source code we first check `contact.php`
 ```php
@@ -286,7 +287,7 @@ cat flag.txt
 ```
 
 >Poc
-![[Pasted image 20250223183015.png]]
+![](Pasted%20image%2020250223183015.png)
 
 ## IV. SerialKiller 🔪
 For this task we got `secrets.php` where the app uses PHP’s `unserialize()` function on user-controlled cookie data
@@ -343,7 +344,7 @@ php >
 
 And finally we send our payload to get admin account:
 >Poc
-![[Pasted image 20250223214610.png]]
+![](Pasted%20image%2020250223214610.png)
 
 ## V. SerialKiller Pro Max 🔪🩸
 For this task we got the same logic of the app, but this time without the secret 
@@ -383,7 +384,7 @@ if ($user->username==='admin' && $user->token=='REDACTED'):
 First we got 2 types of comparisons in php:
 - **Loose** comparison: using `== or !=` : both variables have "the same value".
 - **Strict** comparison: using `=== or !==` : both variables have "the same type and the same value".
-You can find more here:![[Pasted image 20250223221421.png]]
+You can find more here:![](Pasted%20image%2020250223221421.png)
 
 From this table we know that with **=*=*** we can get a ==TRUE== statement when sending a Boolean value
 ```php
@@ -417,4 +418,5 @@ php >
 
 Finally we send the final request to the server with our serialized object:
 > Poc
-![[Pasted image 20250223223503.png]]
+
+![](https://github.com/user-attachments/assets/0e3c76ee-05a6-41d5-b465-0cc1f262bca7)
